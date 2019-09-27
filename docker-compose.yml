@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  ai-hat:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        GIT_CONFIG_USER_NAME: $GIT_CONFIG_USER_NAME
+        GIT_CONFIG_EMAIL: $GIT_CONFIG_EMAIL
+
+    image: ai-hat:latest
+    env_file:
+      - .env
+    environment:
+      PYTHONPATH: '/home/ai-hat'
+      PROJECT_PATH: '/home/ai-hat'
+      LANG: 'C.UTF-8'
+    ports:
+      - 8888:8888
+      - 5000:5000
+    volumes:
+      - ./:/home/ai-hat
+      - ./config:/home/ai-hat/config
+      - ./data:/home/ai-hat/data
+      - ./.dvc:/home/ai-hat/.dvc
+      - ./notebooks:/home/ai-hat/notebooks
+      - ./src:/home/ai-hat/src
