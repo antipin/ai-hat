@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# project specific
+.DS_Store
+.idea/*
+
+app/*
+data/*
+models/*
+notebooks/*
