@@ -135,24 +135,6 @@ docker-flask-app
 - what is Flask https://palletsprojects.com/p/flask/
 
 
-# Fodler Structue 
-
-app/ - папка с приложением
-config/ - конфиги для обучения, приложения и сборки 
-data/ - данные (NOT in GitHub) 
-models/ - здесь лежат обученные модели (NOT in GitHub) 
-notebooks/ - для ноутбуков (NOT in GitHub)
-src/ - пака с общим кодом для app, обучения и процесинга 
-
-
-# Test 
-
-### Local test
-
-explain: http://0.0.0.0:5000/explain?word=riddle&n_words=10
-guess: http://0.0.0.0:5000/guess?word=riddle&n_words=10
-
-
 # Docker image pull/push
 
 __Pull__ 
@@ -163,5 +145,46 @@ __Push__
 
 docker tag ai-hat:latest mnrozhkov/ai-hat:v1
 docker push mnrozhkov/ai-hat:v1
+
+
+
+# Fodler Structue 
+
+app/ - папка с приложением
+config/ - конфиги для обучения, приложения и сборки 
+data/ - данные (NOT in GitHub) 
+models/ - здесь лежат обученные модели (NOT in GitHub) 
+notebooks/ - для ноутбуков (NOT in GitHub)
+src/ - пака с общим кодом для app, обучения и процесинга 
+
+
+# Installation 
+
+1. `git clone https://github.com/mnrozhkov/ai-hat.git` 
+
+2. `cd ai-hat`
+
+3. Скопировать файлы 
+
+данные в data/ 
+    vocabulary/
+    us-financial-news-articles.txt
+
+
+модели в models/ 
+ноубуки в notebooks/
+
+
+GIT_CONFIG_USER_NAME=mnrozhkov
+GIT_CONFIG_EMAIL=mnrozhkov@gmail.com
+
+
+# Test 
+
+### Local test
+
+explain: http://0.0.0.0:5000/explain?word=riddle&n_words=10
+guess: http://0.0.0.0:5000/guess?word=riddle&n_words=10
+
 
 
